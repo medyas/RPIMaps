@@ -1,0 +1,567 @@
+/* Font Family
+================================================== */
+
+@font-face {
+font-family: "Oxygen";
+src: url("fonts/Oxygen-Bold.ttf");
+src:url("fonts/Oxygen-Light.ttf") ;
+src:url("fonts/Oxygen-Regular.ttf");
+}
+@font-face {
+font-family: "Paprika";
+src:url("fonts/Paprika-Regular.ttf");
+}
+@font-face {
+font-family: "Jacques Francois";
+src:url("fonts/JacquesFrancois-Regular.ttf");
+}
+
+/* Global Styles
+================================================== */
+
+html,body {
+-webkit-font-smoothing:antialiased;
+-webkit-text-size-adjust:100%;
+color: #fff;
+font-size:105%;
+font-family:"Oxygen", HelveticaNeue, "Helvetica Neue", Helvetica, Arial, sans-serif;
+font-weight:300;
+letter-spacing:.025rem;
+line-height:1.618;
+margin:0px auto;
+}
+
+
+* {
+-webkit-tap-highlight-color:rgba(0,0,0,0);
+-webkit-tap-highlight-color:transparent;
+}
+
+
+/* Setup
+================================================== */
+.container { position:relative;  width:100%; height: 100%;}
+.column { width:inherit; }
+
+
+/* Typography / Links
+================================================== */
+
+p { color:#fff; display:block; font-size:.9rem; font-weight:400; margin:0 0 2px; }
+
+a,a:visited { color:#8cc3e6; outline:0; text-decoration:underline; }
+a:hover,a:focus { color:#bbdef5; }
+p a,p a:visited { line-height:inherit; }
+
+
+/* Misc.
+================================================== */
+
+.add-bottom { margin-bottom:2rem !important; }
+.left { float:left; }
+.right { float:right; }
+.center { text-align:center; }
+
+
+/* Audio Player Styles
+================================================== */
+
+#mainwrap {}
+
+#notify {
+    position:absolute;
+    border-radius: 10px;
+    border: 1px solid white;
+    top: 90%;
+    left: 10%;
+    width: 80%;
+    height: 8%;
+    background-color: rgba(153, 153, 0, 0.8);
+    text-align: center;
+}
+
+#audiowrap,
+#plwrap {
+margin:0 auto;
+}
+#plwrap {
+     overflow-y: scroll;
+     display: block;
+     width: 95%;
+     height: 240px;
+}
+
+#tracks {
+position:relative;
+text-align:center;
+display: block;
+border-radius: 25px;
+margin: auto;
+background-color: rgba(0, 0, 0, 0.6);
+}
+
+#playlist {
+    height: 40px;
+    display: block;
+    margin: auto;
+}
+#musicSearch {
+    color: #045283;
+    background-color: white;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)
+}
+#musSearch {
+    cursor: pointer;
+    padding-left: 15px;
+    margin: 0px auto;
+}
+#sclear {
+    border-right: 2px solid #0099CC;
+    padding-right: 10px;
+    cursor: pointer;
+}
+#musicSearch input{
+    border: none;
+    font-weight: bold;
+}
+#musicSearch input:focus{
+    border: none;
+    box-shadow: none;
+}
+#showlist span {
+    cursor: pointer;
+}
+
+#nowPlay {
+display:inline;
+color: #F4AE01;
+}
+
+#npTitle {
+ padding:21px;
+}
+/*
+slider */
+
+#slider {
+  height: 80px;
+  overflow: hidden;
+  position: relative;
+}
+#slider span {
+    position: absolute;
+    width: 80%;
+    height: 100%;
+    margin: 0;
+    line-height: 30px;
+    text-align: center;
+    font-family: 'Jacques Francois', serif;
+
+    /* Starting position */
+   -moz-transform:translateX(100%);
+   -webkit-transform:translateX(100%);
+   transform:translateX(100%);
+
+ /* Apply animation to this element */
+   -moz-animation: slider 15s linear infinite;
+   -webkit-animation: slider 15s linear infinite;
+   animation: slider 15s linear infinite;
+}
+
+/* Move it (define the animation) */
+  @-moz-keyframes slider {
+   0%   { -moz-transform: translateX(100%); }
+   100% { -moz-transform: translateX(-100%); }
+  }
+  @-webkit-keyframes slider {
+   0%   { -webkit-transform: translateX(100%); }
+   100% { -webkit-transform: translateX(-100%); }
+  }
+@keyframes slider {
+    0%   {
+    -moz-transform: translateX(100%); /* Firefox bug fix */
+    -webkit-transform: translateX(100%); /* Firefox bug fix */
+    transform: translateX(100%);
+    }
+    100% {
+    -moz-transform: translateX(0%); /* Firefox bug fix */
+    -webkit-transform: translateX(0); /* Firefox bug fix */
+    transform: translateX(0%);
+    }
+}
+/* ==============================================*/
+
+#npAction {
+padding: 21px 21px 21px 8px;
+margin-left: 40px;
+position: relative;
+}
+
+#plList {
+    height: 250px;
+}
+
+#plList li {
+cursor:pointer;
+display:block;
+margin:0;
+padding:21px 0;
+border-bottom: 1px solid white;
+}
+
+
+#plList li:hover {
+background-color:rgba(0,0,0,.1);
+}
+
+.plItem {
+position:relative;
+}
+
+.plFav {
+	background-color:rgba(179, 143, 0,.4);
+	font-weight: bold;
+}
+
+
+.plTitle {
+left:70px;
+overflow:hidden;
+position:absolute;
+right:65px;
+text-overflow:ellipsis;
+top:0;
+white-space:nowrap;
+
+}
+
+.plNum {
+padding-left:21px;
+width:40px;
+}
+.plNum img {
+    margin-top: -5px;
+}
+.plLength {
+padding-left:21px;
+position:absolute;
+right:21px;
+top:0;
+}
+
+.plSel,
+.plSel:hover {
+font-weight: bold;
+color:#fff;
+cursor:pointer;
+}
+
+
+a[id^="btn"] {
+border-radius:3px;
+color:#fff;
+cursor:pointer;
+display:inline-block;
+font-size:2rem;
+height:35px;
+line-height:.8;
+margin:0 20px 20px;
+padding:10px;
+text-decoration:none;
+transition:background .3s ease;
+width:35px;
+}
+
+a[id^="btn"]:last-child {
+margin-left:-4px;
+}
+
+a[id^="btn"]:hover,
+a[id^="btn"]:active {
+
+}
+
+a[id^="btn"]::-moz-focus-inner {
+border:0;
+padding:0;
+}
+
+#btnAPlaylist img{
+    margin-top:-10px;
+}
+#reload {
+    cursor: pointer;
+}
+
+/*
+================================================== */
+ /* The side navigation menu */
+.sidenav {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #1a0000;
+    overflow-x: hidden;
+    padding-top: 60px;
+    transition: 0.5s;
+}
+
+.sidenav span {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #FBC800;
+    display: block;
+    transition: 0.3s;
+    cursor: pointer;
+    border-bottom: 1px solid gray;
+    margin: 10px;
+    padding: 10px;
+}
+
+.sidenav span:active {
+    background-color: #f1f1f1;
+}
+
+.sidenav .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+}
+
+#menu {
+  position:fixed;
+  top:2%;left:2%;
+  z-index:1;
+  cursor:pointer;
+  color: #FBC800;
+  border: 1px solid white;
+  border-radius: 5px;
+}
+#menu span {
+    border-radius: 5px;
+    padding: 5px;
+    font-size: 25px;
+}
+.active {
+    text-align: center;
+    color: white !important;
+}
+
+
+/*
+=========================================================*/
+
+#dashboard, #maps, #music, #ads, #info, #setting{
+    margin: 0 !important;
+    width: 100%;
+    height: 480px;
+    background-image: url("../img/taxi-background.jpg");
+    background-size: 100% 100%;
+}
+
+/*
+	dashboard
+===========================================================*/
+#time {
+	font-size: 150%;
+	width: 100%;
+	height: 100px;
+	color: red;
+	text-align: center;
+}
+
+#dashData {
+	background-color: RGBa(0,0,0,.8);
+}
+
+#other {
+	display: inline-block;
+	width: 65%;
+}
+
+#other ul {
+	width: 100%
+}
+#other li {
+    display: block;
+    font-weight: bold;
+    font-size: 120%;
+    margin: 10px;
+    padding: 3px;
+}
+#other li p {
+    display: inline-block;
+    font-weight: bold;
+    font-size: 120%;
+}
+
+#speed {
+	display: inline-block;
+}
+
+.GaugeMeter {
+  position: Relative;
+  text-align: Center;
+  overflow: Hidden;
+  cursor: Default;
+  display: inline-block;
+}
+
+.GaugeMeter SPAN, .GaugeMeter B {
+  width: 60%;
+  position: Absolute;
+  text-align: Center;
+  display: Inline-Block;
+  color: RGBa(255,255,255,.8);
+  font-weight: 100;
+  font-family: "Open Sans", Arial;
+  overflow: Hidden;
+  white-space: NoWrap;
+  text-overflow: Ellipsis;
+  margin: 0 20%;
+}
+
+.GaugeMeter S, .GaugeMeter U {
+  text-decoration: None;
+  font-size: .60em;
+  font-weight: 200;
+  opacity: .6;
+}
+
+
+/*
+===========================================================*/
+audio {
+    margin:0 15px 0 14px;
+    padding-left: 30px;
+    width:90%;
+    opacity: .5;
+}
+
+
+/*
+map style
+====================================================*/
+#maps {
+}
+#map {
+height: 480px;
+margin-top: 0px !important;
+}
+#dis {
+    color: #0099cc;
+    font-weight: bold;
+}
+.mIcon span{
+    font-size: 30px;
+    text-align: center;
+    background-color: white;
+    color: #757575;
+    border-radius: 5px;
+    padding: 5px;
+}
+#gps{
+  position:absolute;
+  top:85%;left:94%;
+  z-index:1;
+  cursor:pointer;
+}
+#clear {
+  position:absolute;
+  top:72%;left:94%;
+  z-index:1;
+  cursor:pointer;
+}
+#search {
+  position:absolute;
+  top:2%;left:94%;
+  z-index:1;
+  cursor:pointer;
+}
+
+/*
+key board
+=================================================*/
+#input {
+    color: #286090;
+    border: 2px solid #286090;
+    border-radius: 15px;
+    height: 60px;
+    font-size: 20px
+}
+#keyboard {
+    border: none;
+    margin: auto;
+    padding-left: 5px;
+    padding-bottom: 5px;
+    color: black;
+    font-weight: bold;
+    font-family: 'Paprika', cursive;
+}
+#keyboard:focus {
+    box-shadow: none !important;
+}
+#lookup {
+    color: #0099cc;
+    font-size: 25px;
+    padding-left: 10px;
+    margin-top: 13px;
+    border-left: 2px solid #286090;
+    margin-left: 10px;
+    cursor: pointer;
+}
+#lclear {
+    cursor: pointer;
+    padding-bottom: 2px;
+}
+
+/*
+ads
+=================================================*/
+#ads {
+
+}
+#fvideo {
+	background-color: rgba(0, 0, 0, 0.9);
+	top: 0px;
+	z-index: -1;
+}
+
+video::-webkit-media-controls {
+  display:none !important;
+}
+
+/*
+setting
+=================================================*/
+
+#settings {
+    width: 90%;
+    height: 90%;
+    margin: 0 auto;
+    color: white;
+    padding-top: 10%;
+}
+#settings ul {
+    background-color: rgba(0, 0, 0, 0.6);
+    height: 100%;
+}
+.setting-list {
+    display: block;
+    font-weight: bold;
+    font-size: 120%;
+    margin: 10px;
+    padding: 3px;
+}
+.setting-list p {
+    display: inline-block;
+    font-weight: bold;
+    font-size: 120%;
+}
